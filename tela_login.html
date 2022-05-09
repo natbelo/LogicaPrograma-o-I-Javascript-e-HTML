@@ -1,22 +1,32 @@
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 
 <script>
+  var loginCadastrado = "alura";
+  var senhaCadastrada = "alura321";
 
-    var loginCadastrado = "alura";
-    var senhaCadastrada = "alura321";
+  var maximoTentaivas = 3;
+  var tentaivaAtual = 1;
 
+  while (tentaivaAtual <= maximoTentaivas) {
     var loginInformado = prompt("Informe seu login");
     var senhaInformada = prompt("Informe sua senha");
 
-    
+    if (
+      loginCadastrado == loginInformado &&
+      senhaCadastrada == senhaInformada
+    ) {
+      alert("Bem-vindo ao sistema " + loginInformado);
 
-    if ( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada) {
-
-        alert("Bem-vindo ao sistema " + loginInformado);
-
+      tentaivaAtual = maximoTentaivas;
     } else {
-
+      if (tentaivaAtual == 3) {
+        alert("Número permitido de tentativas ultrapassou o limite!");
+      } else {
         alert("Login inválido. Tente novamente.");
+      }
     }
 
+    //vai para a proxima tentaiva
+    tentaivaAtual = tentaivaAtual + 1;
+  }
 </script>
